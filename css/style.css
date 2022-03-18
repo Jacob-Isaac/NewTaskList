@@ -1,0 +1,36 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+.body {
+  font-family:  'Supermercado One', cursive, sans-serif;
+  background-color: #4b4d66;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.allBoxesProperties {
+  color: rgb(24, 24, 24);
+  box-shadow: 5px 5px 10px;
+  margin: auto;
+  margin-top: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(255 255 255 / 80%);
+  min-width: 250px;
+  width: 80%;
+  border-radius: 17px;
+}
+.taskDone {
+text-decoration: line-through;
+}
+.flex {
+display:flex;
+flex-direction: row;
+}

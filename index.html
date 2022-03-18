@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jakub Nowakowski</title>
+  <meta property="og:image" content="images/share.png" />
+  <meta property="og:description" content="Oto Dziennik zadań!" />
+  <link rel="icon" href="images/currency.jpg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/header.css" rel="stylesheet" />
+  <link href="css/form.css" rel="stylesheet" />
+  <script defer src="javaScript/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet" />
+</head>
+
+<body class="body">
+  <header>
+    <div class="navigation allBoxesProperties">
+      <button class="js-PLN navigation__links">
+        <span>Zapisz</span>
+      </button>
+      <button class="js-EUR navigation__links">
+        <span>Załaduj</span>
+      </button>
+      <button class="js-USD navigation__links">
+        <span>Usuń</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="allBoxesProperties">
+    <!-- EDIT PRZYCISKÓW -->
+    <!-- EDIT PRZYCISKÓW -->
+    <button class="js-ukryj">Ukryj ukończone</button>
+    <button class="js-ukoncz">Ukończ wszystkie</button>
+    <form class="js-form">
+
+      <p class="formProps__inputSection">
+        <label>
+          <input class="js-newTask" />
+        </label>
+      </p>
+      <p class="formProps">
+        <button class="js-result">DODAJ !</button>
+      </p>
+      <p id="js-resultTextSize" class="js-formProps__result formProps formProps__textProps"></p>
+    </form>
+    <p class="js-tasks"></p>
+    <p class="formProps__fontSize">©Copyright 2022 by Jakub Nowakowski - wszystkie prawa zastrzeżone</p>
+  </main>
+</body>
+
+</html>
