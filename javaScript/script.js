@@ -1,5 +1,10 @@
 {
-
+  const changeTextSize = (newTask) => {
+     if (newTask.length > 68)
+     {
+       document.getElementById("js-tasksTextSize").classList.add('tasks__smallText');
+     }  
+  }
 
   const onRemove = (index) => {
     taskList = [
@@ -43,30 +48,36 @@
   };
 
   const onUkryj = () => {
-    //if elementy taskList done:true -> splice
+    console.log(taskList);
+    hideTasks = !hideTasks;
+    render();
   };
 
   const przyciski = () => {
-    const ukryj = document.querySelector(".js-ukryj");
-    const ukoncz = document.querySelector(".js-ukoncz");
+    const ukryj = document.querySelector(".js-hide");
+    const ukoncz = document.querySelector(".js-complete");
     ukryj.addEventListener("click", onUkryj);
     ukoncz.addEventListener("click", onUkoncz);
   };
 
   const render = () => {
     let htmlString = "";
-
+    let hideTasksHtml = "";
     for (const task of taskList) {
-      htmlString += `<div class="flex">
-    <button class="js-tickTask">✔</button>
-    <li ${task.done ? "class = \"taskDone\"" : ""}>${task.content}</li>
-    <button class="js-removeTask">🗑️</button>
-    </div>`;
+      htmlString += `<div class = ${task.done && hideTasks === true ? "\"taskHide\"" : "\"tasks__flex\""}>
+    <button class="js-tickTask tasks__buttonProperties">✔</button>
+    <li ${task.done ? "class = \"taskDone tasks__flexGrowContent\"" : "class = \"tasks__flexGrowContent\""}>&nbsp;&nbsp;${task.content}</li>
+    <button class="js-removeTask tasks__buttonProperties">🗑️</button>
+    </div>
+    <p class= ${task.done && hideTasks === true ? "\"taskHide\"" : "\"tasks__border-bottom\""}></p>`;
     };
+    hideTasksHtml += `${hideTasks === true ? "Pokaż ukończone" : "Ukryj ukończone"}`;
 
     const result = document.querySelector(".js-tasks");
+    const ukryj = document.querySelector(".js-hide");
     result.innerHTML = htmlString;
-    console.log(taskList); // dlaczego wymusza tablice let ??? dlaczego nie widac jej w konsoli ?? 
+    ukryj.innerHTML = hideTasksHtml;
+    console.log(taskList); 
     tickButton();
     removeButton();
     przyciski();
@@ -75,8 +86,12 @@
   const onFormSubmit = (event) => {
     event.preventDefault();
     const newTask = document.querySelector(".js-newTask").value.trim();
-    newTask === "" ? void (0) :
+    const newTaskFocus = document.querySelector(".js-newTask");
+    newTask === "" ? null :
       taskList = [...taskList, { content: newTask, done: false }];
+    changeTextSize(newTask);
+    newTaskFocus.focus();
+    newTaskFocus.value = "";
     render();
   };
 
@@ -89,5 +104,6 @@
   init();
 
   let taskList = [];
+  let hideTasks = false;
 
 }

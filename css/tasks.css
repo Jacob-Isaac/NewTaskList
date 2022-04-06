@@ -1,0 +1,39 @@
+.taskDone {
+  text-decoration: line-through;
+
+}
+
+.taskHide {
+  display: none;
+}
+
+.tasks__flex {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.tasks__border-bottom {
+  border-bottom: 1px solid rgb(158, 157, 157);
+}
+
+.tasks__flexGrowContent {
+  flex-grow: 1;
+}
+
+.tasks {
+  text-align: left;
+  list-style-type: none;
+  margin-left: 35px;
+  margin-right: 35px;
+  word-break: break-word;
+}
+
+.tasks__smallText {
+  font-size: 12px;
+}
+
+.tasks__buttonProperties {
+  block-size: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
