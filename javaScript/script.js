@@ -64,15 +64,15 @@
     let htmlString = "";
     let hideTasksHtml = "";
     for (const task of taskList) {
-      htmlString += `<div class = ${task.done && hideTasks === true ? "\"taskHide\"" : "\"tasks__flex\""}>
+      htmlString += `<li class = ${task.done && hideTasks === true ? "\"taskHide\"" : "\"tasks__flex tasks__border-bottom\""}>
     <button class="js-tickTask tasks__buttonProperties">✔</button>
-    <li ${task.done ? "class = \"taskDone tasks__flexGrowContent\"" : "class = \"tasks__flexGrowContent\""}>&nbsp;&nbsp;${task.content}</li>
+    <span ${task.done ? "class = \"taskDone tasks__flexGrowContent\"" : "class = \"tasks__flexGrowContent\""}>&nbsp;&nbsp;${task.content}</span>
     <button class="js-removeTask tasks__buttonProperties">🗑️</button>
-    </div>
-    <p class= ${task.done && hideTasks === true ? "\"taskHide\"" : "\"tasks__border-bottom\""}></p>`;
+    <p></p>
+    </li>`
     };
     hideTasksHtml += `${hideTasks === true ? "Pokaż ukończone" : "Ukryj ukończone"}`;
-
+//<p class= ${task.done && hideTasks === true ? "\"taskHide\"" : "\"tasks__border-bottom\""}></p>
     const result = document.querySelector(".js-tasks");
     const ukryj = document.querySelector(".js-hide");
     result.innerHTML = htmlString;
